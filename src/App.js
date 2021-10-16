@@ -4,17 +4,22 @@ import Home from "./pages/Home";
 import Favourite from "./pages/Favourite";
 import NotFound from "./pages/NotFound";
 import Nav from "./components/Nav";
+import { useState } from "react";
+
 
 function App() {
+
+  const [contacts, setContacts] = useState([])
   const formSub = (data) => {
-    console.log(data);
+    //console.log(data);
+    setContacts([...contacts, data])
   };
   return (
     <Router>
       <Nav />
       <Switch>
         <Route exact path="/">
-          <Home formSub={formSub} />
+          <Home formSub={formSub} contacts={contacts}/>
         </Route>
         <Route path="/favourite">
           <Favourite />
