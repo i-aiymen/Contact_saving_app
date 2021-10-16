@@ -1,3 +1,18 @@
 {
-  "contacts": []
+  "contacts": [
+    {
+      "name": "Muhammed Ayimen",
+      "email": "aiymenlatheef03@gmail.com",
+      "phone": "7034297953",
+      "id": 1634374628139,
+      "fav": false
+    },
+    {
+      "name": "Binuraj",
+      "email": "xyz@gmail.com",
+      "phone": "7034297956",
+      "id": 1634374642513,
+      "fav": true
+    }
+  ]
 }
