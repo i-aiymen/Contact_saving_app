@@ -6,20 +6,18 @@ import NotFound from "./pages/NotFound";
 import Nav from "./components/Nav";
 import { useState } from "react";
 
-
 function App() {
-
-  const [contacts, setContacts] = useState([])
+  const [contacts, setContacts] = useState([]);
   const formSub = (data) => {
     //console.log(data);
-    setContacts([...contacts, data])
+    setContacts([...contacts, data]);
   };
   return (
     <Router>
       <Nav />
       <Switch>
         <Route exact path="/">
-          <Home formSub={formSub} contacts={contacts}/>
+          <Home formSub={formSub} contacts={contacts} />
         </Route>
         <Route path="/favourite">
           <Favourite />
