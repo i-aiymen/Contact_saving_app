@@ -2,7 +2,7 @@ import React from "react";
 import Contact from "../components/Contact";
 import Form from "../components/Form";
 
-function Home({ formSub, contacts, deleteContact }) {
+function Home({ formSub, contacts, deleteContact, favToggle }) {
   //console.log(contacts);
   return (
     <div className="container my-5">
@@ -15,6 +15,7 @@ function Home({ formSub, contacts, deleteContact }) {
               key={singleContact.id}
               contact={singleContact}
               deleteContact={deleteContact}
+              favToggle={favToggle}
             />
           );
         })}

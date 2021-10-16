@@ -14,23 +14,39 @@ function App() {
   };
 
   const deleteContact = (id) => {
-
-      let newContact = contacts.filter((singleContact) => {
-        return singleContact.id !== id;
-      });
-      setContacts(newContact);
+    let newContact = contacts.filter((singleContact) => {
+      return singleContact.id !== id;
+    });
+    setContacts(newContact);
   };
 
-  
+  const favToggle = (id) => {
+    let updatedContact = contacts.map((singleContact) => {
+      return singleContact.id === id
+        ? { ...singleContact, fav: !singleContact.fav }
+        : singleContact;
+    });
+    setContacts(updatedContact);
+  };
+
   return (
     <Router>
       <Nav />
       <Switch>
         <Route exact path="/">
-          <Home formSub={formSub} contacts={contacts} deleteContact={deleteContact}/>
+          <Home
+            formSub={formSub}
+            contacts={contacts}
+            deleteContact={deleteContact}
+            favToggle={favToggle}
+          />
         </Route>
         <Route path="/favourite">
-          <Favourite />
+          <Favourite
+            contacts={contacts}
+            deleteContact={deleteContact}
+            favToggle={favToggle}
+          />
         </Route>
         <Route path="*">
           <NotFound />

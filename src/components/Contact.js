@@ -1,4 +1,8 @@
-function Contact({ contact: { name, phone, email, id }, deleteContact }) {
+function Contact({
+  contact: { name, phone, email, id, fav },
+  deleteContact,
+  favToggle,
+}) {
   //console.log(contact);
   return (
     <>
@@ -7,6 +11,20 @@ function Contact({ contact: { name, phone, email, id }, deleteContact }) {
           <div className="card-header">
             <div className="row">
               <div className="col-6 ">{name}</div>
+              <div
+                onClick={() => {
+                  favToggle(id);
+                }}
+                className="col-2 offset-4"
+              >
+                <i
+                  className={
+                    fav
+                      ? "fas fa-star text-warning"
+                      : "far fa-star text-warning"
+                  }
+                ></i>
+              </div>
             </div>
           </div>
           <ul className="list-group list-group-flush">
