@@ -17,6 +17,7 @@ function Favourite({ contacts, deleteContact, favToggle }) {
               )
             );
           })}
+          {contacts.filter(single=>single.fav).length === 0 && (<h1>No Favourite contact</h1>)}
         </div>
       </div>
     </>

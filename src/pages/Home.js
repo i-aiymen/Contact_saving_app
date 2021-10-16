@@ -19,6 +19,7 @@ function Home({ formSub, contacts, deleteContact, favToggle }) {
             />
           );
         })}
+        {contacts.length === 0 && (<h1>No contacs to show</h1>)}
       </div>
     </div>
   );
