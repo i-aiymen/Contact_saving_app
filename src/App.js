@@ -12,12 +12,22 @@ function App() {
     //console.log(data);
     setContacts([...contacts, data]);
   };
+
+  const deleteContact = (id) => {
+
+      let newContact = contacts.filter((singleContact) => {
+        return singleContact.id !== id;
+      });
+      setContacts(newContact);
+  };
+
+  
   return (
     <Router>
       <Nav />
       <Switch>
         <Route exact path="/">
-          <Home formSub={formSub} contacts={contacts} />
+          <Home formSub={formSub} contacts={contacts} deleteContact={deleteContact}/>
         </Route>
         <Route path="/favourite">
           <Favourite />

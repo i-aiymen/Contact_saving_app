@@ -2,7 +2,7 @@ import React from "react";
 import Contact from "../components/Contact";
 import Form from "../components/Form";
 
-function Home({ formSub, contacts }) {
+function Home({ formSub, contacts, deleteContact }) {
   //console.log(contacts);
   return (
     <div className="container my-5">
@@ -10,7 +10,13 @@ function Home({ formSub, contacts }) {
         <Form formSub={formSub} />
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5"></div>
         {contacts.map((singleContact) => {
-          return <Contact key={singleContact.id} contact={singleContact} />;
+          return (
+            <Contact
+              key={singleContact.id}
+              contact={singleContact}
+              deleteContact={deleteContact}
+            />
+          );
         })}
       </div>
     </div>
